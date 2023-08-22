@@ -16,9 +16,9 @@ const NavigationBar = () => {
         </div>
         <div className="flex items-center space-x-4">
           <div className="hidden lg:flex space-x-4">
-            <a href="#" className="relative w-fit text-[#396E8D] block after:block after:content-[''] after:absolute after:h-[3px] after:bg-slate-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left">Home</a>
-            <a href="#" className="relative w-fit text-[#396E8D] block after:block after:content-[''] after:absolute after:h-[3px] after:bg-slate-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left">About</a>
-            <a href="#" className="relative w-fit text-[#396E8D] block after:block after:content-[''] after:absolute after:h-[3px] after:bg-slate-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left">Contact</a>
+            <a href="#" className="relative w-fit text-[#396E8D] block font-semibold after:block after:content-[''] after:absolute after:h-[3px] after:bg-slate-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left">Home</a>
+            <a href="#" className="relative w-fit text-[#396E8D] block font-semibold after:block after:content-[''] after:absolute after:h-[3px] after:bg-slate-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left">About</a>
+            <a href="#" className="relative w-fit text-[#396E8D] block font-semibold after:block after:content-[''] after:absolute after:h-[3px] after:bg-slate-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left">Contact</a>
 
            
           </div>
@@ -45,9 +45,9 @@ const NavigationBar = () => {
       </div>
       {menuOpen && (
         <div className="lg:hidden mt-4">
-          <a href="#" className="block text-[#396E8D] mb-2">Home</a>
-          <a href="#" className="block text-[#396E8D] mb-2">About</a>
-          <a href="#" className="block text-[#396E8D] mb-2">Contact</a>
+          <a href="#" className="block text-[#396E8D] font-semibold mb-2">Home</a>
+          <a href="#" className="block text-[#396E8D] font-semibold mb-2">About</a>
+          <a href="#" className="block text-[#396E8D] font-semibold mb-2">Contact</a>
         </div>
       )}
     </nav>
