@@ -1,6 +1,6 @@
 import './App.css';
 import Index from './components/index'
-const App = () => {
+function App() {
   return (
     <div className="App">
       <Index />
