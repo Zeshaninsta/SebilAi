@@ -1,24 +1,29 @@
-import React from 'react'
-import Home from './Home'
-import Nav from './Nav'
-import PredictionPage from './prediction'
-import Maximize from './Maximize'
-import Footer from './Footer_page';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './Home';
+import Nav from './Nav';
+
 import AboutPage from './About';
+import ContactForm from './contact';
+import NavigationBar from './Nav';
+import Footer from './Footer_page';
 
-const index = () => {
+const App = () => {
   return (
-    <div className='index'>
-        <Nav />
-        <Home />
-        <PredictionPage />
-        <Maximize />
-        <Footer />
-        <AboutPage/>
+    <Router>
+      <div className='index'>
+        <NavigationBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactForm />} />
+        </Routes>
+        <Footer/>
+       
+       
+      </div>
+    </Router>
+  );
+};
 
-
-    </div>
-  )
-}
-
-export default index
+export default App;
