@@ -21,15 +21,15 @@ const HomePage = () => {
 
         <h1
           className="absolute bottom-0 right-0 p-4 text-white text-right text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-bold"
-          style={{
-            color: '#FFF',
-            textAlign: 'center',
-            fontFamily: 'Mochiy Pop One',
-            fontSize: '64px',
-            fontStyle: 'normal',
-            fontWeight: '400',
-            lineHeight: 'normal',
-          }}
+          // style={{
+          //   color: '#FFF',
+          //   textAlign: 'center',
+          //   fontFamily: 'Mochiy Pop One',
+          //   fontSize: '64px',
+          //   fontStyle: 'normal',
+          //   fontWeight: '400',
+          //   lineHeight: 'normal',
+          // }}
         >
           Discover the<br />perfect crop<br />for Your<br />Environment
         </h1>
