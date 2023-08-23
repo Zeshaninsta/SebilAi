@@ -16,7 +16,7 @@ const PredictionPage = () => {
     const temperatureValue = parseFloat(temperature);
     const phValue = parseFloat(ph);
 
-    const predictedCrop = "Banana"; 
+    const predictedCrop = "Jute"; 
 
     const predictedImage = image_index[predictedCrop];
     if (

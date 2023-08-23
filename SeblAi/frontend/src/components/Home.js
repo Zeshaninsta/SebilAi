@@ -8,7 +8,7 @@ import Footer from './Footer_page';
 const HomePage = () => {
   return (
     <div>
-      <div className="relative min-h-[calc(100vh-73px)] h-full overflow-hidden Home sm:p-8 px-4 py-8 w-full">
+      <div className="relative min-h-[calc(100vh-73px)] h-full overflow-hidden sm:p-8 px-4 py-8 w-full">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${Image})` }}></div>
 
         <div className="absolute top-0 left-0 w-full flex justify-center items-center p-4 md:p-6 lg:p-8">
@@ -20,22 +20,19 @@ const HomePage = () => {
         </div>
 
         <h1
-          className="absolute bottom-0 right-0 p-4 text-white text-right text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-bold"
-          // style={{
-          //   color: '#FFF',
-          //   textAlign: 'center',
-          //   fontFamily: 'Mochiy Pop One',
-          //   fontSize: '64px',
-          //   fontStyle: 'normal',
-          //   fontWeight: '400',
-          //   lineHeight: 'normal',
-          // }}
+          className="absolute bottom-0 right-0 p-4 text-white text-right text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold"
+          style={{
+            color: '#FFF',
+            textAlign: 'center',
+            fontFamily: 'Mochiy Pop One',
+          }}
         >
           Discover the<br />perfect crop<br />for Your<br />Environment
         </h1>
       </div>
       <PredictionPage />
       <Maximize />
+      
     </div>
   );
 };
