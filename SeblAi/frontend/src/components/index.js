@@ -3,7 +3,8 @@ import Home from './Home'
 import Nav from './Nav'
 import PredictionPage from './prediction'
 import Maximize from './Maximize'
-import Footer from './Footer_page'
+import Footer from './Footer_page';
+import AboutPage from './About';
 
 const index = () => {
   return (
@@ -13,6 +14,7 @@ const index = () => {
         <PredictionPage />
         <Maximize />
         <Footer />
+        <AboutPage/>
 
 
     </div>
