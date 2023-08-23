@@ -40,27 +40,33 @@ const NavigationBar = () => {
             </Link>
           </div>
           <button
-            className="text-[#396E8D] lg:hidden"
-            onClick={toggleMenu}
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              {/* SVG content */}
-            </svg>
-          </button>
+  className="text-[#396E8D] lg:hidden"
+  onClick={toggleMenu}
+>
+  <svg
+    className="w-6 h-6"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    {/* Add SVG content here */}
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M4 6h16M4 12h16M4 18h16"
+    />
+  </svg>
+</button>
         </div>
       </div>
       {menuOpen && (
         <div className="lg:hidden mt-4">
-          <a href="#" className="block text-[#396E8D] font-semibold mb-2">Home</a>
-          <a href="#" className="block text-[#396E8D] font-semibold mb-2">About</a>
-          <a href="#" className="block text-[#396E8D] font-semibold mb-2">Contact</a>
-        </div>
+          <Link to="/" className="block text-[#396E8D] font-semibold mb-2">Home</Link>
+          <Link to="/about" className="block text-[#396E8D] font-semibold mb-2">About</Link>
+          <Link to="/contact" className="block text-[#396E8D] font-semibold mb-2">Contact</Link>
+         </div>
       )}
     </nav>
   );

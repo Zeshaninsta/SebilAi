@@ -16,7 +16,7 @@ const PredictionPage = () => {
     const temperatureValue = parseFloat(temperature);
     const phValue = parseFloat(ph);
 
-    const predictedCrop = "Banana"; 
+    const predictedCrop = "Apple"; 
 
     const predictedImage = image_index[predictedCrop];
     if (
@@ -43,15 +43,17 @@ const PredictionPage = () => {
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <div className="bg-white w-full md:w-11/12 lg:w-11/12 xl:w-11/12 p-5 border-t-4 border-4 border-[#396E8D] relative p-5">
-        <h1 className="text-[#396E8D] font-Poppins text-6xl font-normal mb-4 border-b-4 border-[#396E8D]">
-          Please Enter These Values:
-        </h1>
+      <h1 className="text-[#396E8D] font-Poppins font-bold text-xl sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-4 border-b-4 border-[#396E8D]">
+  Please Enter These Values:
+</h1>
         {/* <hr style={{ width: '1340.008px', height: '9px', background: '#396E8D' }} /> */}
 <br/>
         <div className="flex items-center justify-center h-full">
-          <div className={`absolute inset-0 flex items-center justify-center ${showDiv ? 'visible' : 'hidden'} w-4/5 h-5/6 m-auto border-2 border-[#396E8D] bg-zinc-300 p-6 rounded-lg shadow-lg transition-transform transform flex-col`}>
-            <h1 className='text-left absolute top-0 font-bold mb-4 border-b-4 border-[#396E8D] w-full text-5xl py-4 px-5 text-[#396E8D]'>Result</h1>
-            <button
+          <div className={`absolute inset-0 flex items-center justify-center ${showDiv ? 'visible' : 'hidden'} w-4/5 h-5/6 m-auto border-4 border-[#396E8D] bg-zinc-300 p-6 rounded-lg shadow-lg transition-transform transform flex-col`}>
+          <h1 className='text-left absolute top-0 font-bold mb-4 border-b-4 border-[#396E8D] w-full text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-5xl py-2 px-4 sm:px-6 lg:px-8 text-[#396E8D]'>
+  Result
+</h1>
+         <button
               onClick={() => setShowDiv(false)}
               className="absolute top-0 right-0 p-2 text-gray-600 hover:text-red-600 focus:outline-none"
             >
@@ -71,18 +73,19 @@ const PredictionPage = () => {
 </div>
           </div>
 
-          <div className="flex flex-col space-y-8">
+          <div className="flex flex-col space-y-8 ">
             <div className="flex flex-col">
               <label htmlFor="humidity" className="text-[#396E8D] font-bold mb-2">
                 Humidity
               </label>
-              <input
+              <input 
                 type="number"
                 id="humidity"
-                className="border-2 bg-gray-200 p-2 rounded-md focus:border-2-[#000] w-64"
+                className="border-2 bg-gray-200 p-2 rounded-md focus:border-2-[#000] w-80"
                 placeholder="0.00"
                 value={humidity}
                 onChange={(e) => setHumidity(e.target.value)}
+                required
               />
             </div>
             <div className="flex flex-col">
@@ -92,10 +95,11 @@ const PredictionPage = () => {
               <input
                 type="number"
                 id="rainfall"
-                className="border-2 bg-gray-200 p-2 rounded-md focus:border-2-[#000] w-64"
+                className="border-2 bg-gray-200 p-2 rounded-md focus:border-2-[#000] w-w-80"
                 placeholder="0.00"
                 value={rainfall}
                 onChange={(e) => setRainfall(e.target.value)}
+                required
               />
             </div>
             <div className="flex flex-col">
@@ -105,10 +109,11 @@ const PredictionPage = () => {
               <input
                 type="number"
                 id="temperature"
-                className="border-2 bg-gray-200 p-2 rounded-md focus:border-2-[#000] w-64"
+                className="border-2 bg-gray-200 p-2 rounded-md focus:border-2-[#000] w-w-80"
                 placeholder="0.00"
                 value={temperature}
                 onChange={(e) => setTemperature(e.target.value)}
+                required
               />
             </div>
             <div className="flex flex-col">
@@ -118,10 +123,11 @@ const PredictionPage = () => {
               <input
                 type="number"
                 id="ph"
-                className="border-2 bg-gray-200 p-2 rounded-md focus:border-2-[#000] w-64"
+                className="border-2 bg-gray-200 p-2 rounded-md focus:border-2-[#000] w-w-80"
                 placeholder="0.00"
                 value={ph}
                 onChange={(e) => setPh(e.target.value)}
+                required
               />
             </div>
           </div>

@@ -20,15 +20,10 @@ const HomePage = () => {
         </div>
 
         <h1
-          className="absolute bottom-0 right-0 p-4 text-white text-right text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold"
-          style={{
-            color: '#FFF',
-            textAlign: 'center',
-            fontFamily: 'Mochiy Pop One',
-          }}
-        >
-          Discover the<br />perfect crop<br />for Your<br />Environment
-        </h1>
+  className="absolute bottom-0 right-0 p-4 text-white text-right text-4xl md:text-2xl lg:text-9xl xl:text-6xl 2xl:text-6xl font-bold"
+>
+  Discover the<br />perfect crop<br />for Your<br />Environment
+</h1>
       </div>
       <PredictionPage />
       <Maximize />
