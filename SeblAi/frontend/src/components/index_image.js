@@ -1,67 +1,68 @@
-// image_index.js
 import React from 'react';
-import Apple from './Pictures/apple.png';
-import Banana from './Pictures/banana.png';
-import AdzukiBeans from './Pictures/Adzuki_Beans.png';
-import BlackGram from './Pictures/black_gram.png';
-import Chickpea from './Pictures/Chickpea.png';
-import Coconut from './Pictures/coconut.png';
-import Coffee from './Pictures/coffee.png';
-import Cotton from './Pictures/cotton.png';
-import Grapes from './Pictures/grapes.png';
-import GroundNut from './Pictures/ground_nut.png';
-import Jute from './Pictures/jute.png';
-import KidneyBeans from './Pictures/kidney_beans.png';
-import Lentil from './Pictures/lentil.png';
-import Maize from './Pictures/maize.png';
-import Mango from './Pictures/mango.png';
-import Millet from './Pictures/Millet.png';
-import MothBeans from './Pictures/moth_beans.png';
-import MungBeans from './Pictures/mung_beans.png';
-import Muskmelon from './Pictures/muskmelon.png';
-import Orange from './Pictures/orange.png';
-import Papaya from './Pictures/papaya.png';
-import Peas from './Pictures/peas.png';
-import PigeonPeas from './Pictures/pigeon_peas.png';
-import Rice from './Pictures/rice.png';
-import Rubber from './Pictures/rubber.png';
-import Sugarcane from './Pictures/sugarcane.png';
-import Tea from './Pictures/tea.png';
-import Tobacco from './Pictures/tobacco.png';
-import Watermelon from './Pictures/watermelon.png';
-import Wheat from './Pictures/Wheat.png';
+import apple from './Pictures/apple.png';
+import banana from './Pictures/banana.png';
+import adzukibeans from './Pictures/Adzuki_Beans.png';
+import blackgram from './Pictures/black_gram.png';
+import chickpea from './Pictures/Chickpea.png';
+import coconut from './Pictures/coconut.png';
+import coffee from './Pictures/coffee.png';
+import cotton from './Pictures/cotton.png';
+import grapes from './Pictures/grapes.png';
+import groundnut from './Pictures/ground_nut.png';
+import jute from './Pictures/jute.png';
+import kidneybeans from './Pictures/kidney_beans.png';
+import lentil from './Pictures/lentil.png';
+import maize from './Pictures/maize.png';
+import mango from './Pictures/mango.png';
+import millet from './Pictures/Millet.png';
+import mothbeans from './Pictures/moth_beans.png';
+import mungBeans from './Pictures/mung_beans.png';
+import muskmelon from './Pictures/muskmelon.png';
+import orange from './Pictures/orange.png';
+import papaya from './Pictures/papaya.png';
+import peas from './Pictures/peas.png';
+import pigeonpeas from './Pictures/pigeon_peas.png';
+import rice from './Pictures/rice.png';
+import rubber from './Pictures/rubber.png';
+import sugarcane from './Pictures/sugarcane.png';
+import tea from './Pictures/tea.png';
+import tobacco from './Pictures/tobacco.png';
+import watermelon from './Pictures/watermelon.png';
+import wheat from './Pictures/Wheat.png';
+import pomegranate from './Pictures/pomegranate.png'
 
 const image_index = {
-  Apple,
-  Banana,
-  AdzukiBeans,
-  BlackGram,
-  Chickpea,
-  Coconut,
-  Coffee,
-  Cotton,
-  Grapes,
-  GroundNut,
-  Jute,
-  KidneyBeans,
-  Lentil,
-  Maize,
-  Mango,
-  Millet,
-  MothBeans,
-  MungBeans,
-  Muskmelon,
-  Orange,
-  Papaya,
-  Peas,
-  PigeonPeas,
-  Rice,
-  Rubber,
-  Sugarcane,
-  Tea,
-  Tobacco,
-  Watermelon,
-  Wheat,
+  apple,
+  banana,
+  adzukibeans,
+  blackgram,
+  chickpea,
+  coconut,
+  coffee,
+  cotton,
+  grapes,
+  groundnut,
+  jute,
+  kidneybeans,
+  lentil,
+  maize,
+  mango,
+  millet,
+  mothbeans,
+  mungBeans,
+  muskmelon,
+  orange,
+  papaya,
+  peas,
+  pigeonpeas,
+  rice,
+  rubber,
+  sugarcane,
+  tea,
+  tobacco,
+  watermelon,
+  wheat,
+  pomegranate
   // ... Add other image imports here ...
 };
 

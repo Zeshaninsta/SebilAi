@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import image_index from './index_image';
+import axios from 'axios';
+
 
 const PredictionPage = () => {
   const [showAlert, setShowAlert] = useState(false);
@@ -9,16 +11,17 @@ const PredictionPage = () => {
   const [rainfall, setRainfall] = useState('');
   const [temperature, setTemperature] = useState('');
   const [ph, setPh] = useState('');
+  
+  // Assuming response.data contains the string you want to modify
 
-  const handlePredict = () => {
+
+  const handlePredict = async () => {
     const humidityValue = parseFloat(humidity);
     const rainfallValue = parseFloat(rainfall);
     const temperatureValue = parseFloat(temperature);
     const phValue = parseFloat(ph);
+    // setImageToShow(predictedImage);
 
-    const predictedCrop = "Apple"; 
-
-    const predictedImage = image_index[predictedCrop];
     if (
       (isNaN(humidityValue) || isNaN(rainfallValue) || isNaN(temperatureValue) || isNaN(phValue)) ||
       (humidityValue === 0 || rainfallValue === 0 || temperatureValue === 0 || phValue === 0)
@@ -31,14 +34,44 @@ const PredictionPage = () => {
       setAlertMessage("pH value can't be zero.");
       setShowAlert(true);
     } else {
-      setShowDiv(true);
-      setAlertMessage(
-        "According to Your Given Input the Predicted Value for Your Environment is Rice"
-      );
-      setShowAlert(true);
+      try {
+        // Create a data object with form values
+        const formData = {
+          temperature: temperatureValue,
+          humidity: humidityValue,
+          ph: phValue,
+          rainfall: rainfallValue
+        };
+
+        //Send form data to Django backend
+        const response = await axios.post('http://localhost:8000/crop/home/form-data/', formData);
+
+
+        const originalString = response.data;
+
+        // Convert to lowercase
+        const lowercaseString = originalString.toLowerCase();
+        
+        // Remove spaces
+        const stringWithoutSpaces = lowercaseString.replace(/\s/g, '');
+        
+        
+          const predictedCrop = stringWithoutSpaces ; 
+          
+          const predictedImage = image_index[predictedCrop];
+
+        // Display the response from the backend
+        setShowDiv(true);
+        setAlertMessage(`Prediction: ${response.data}`);
+        setShowAlert(true);
+        setImageToShow(predictedImage);
+      } catch (error) {
+        console.error(error);
+      }
     }
-    setImageToShow(predictedImage);
+ 
   };
+
   const [imageToShow, setImageToShow] = useState(null);
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
@@ -67,13 +100,26 @@ const PredictionPage = () => {
     <img
       src={imageToShow}
       alt="Predicted Crop"
-      className="max-w-full w-28 h-28 absolute bottom-20"
+      className="max-w-full w-36 h-36 absolute bottom-10"
     />
   )}
 </div>
           </div>
-
           <div className="flex flex-col space-y-8 ">
+          <div className="flex flex-col">
+              <label htmlFor="temperature" className="text-[#396E8D] font-bold mb-2">
+                Temperature
+              </label>
+              <input
+                type="number"
+                id="temperature"
+                className="border-2 bg-gray-200 p-2 rounded-md focus:border-2-[#000] w-w-80"
+                placeholder="0.00"
+                value={temperature}
+                onChange={(e) => setTemperature(e.target.value)}
+                required
+              />
+            </div>
             <div className="flex flex-col">
               <label htmlFor="humidity" className="text-[#396E8D] font-bold mb-2">
                 Humidity
@@ -89,34 +135,6 @@ const PredictionPage = () => {
               />
             </div>
             <div className="flex flex-col">
-              <label htmlFor="rainfall" className="text-[#396E8D] font-bold mb-2">
-                Rainfall
-              </label>
-              <input
-                type="number"
-                id="rainfall"
-                className="border-2 bg-gray-200 p-2 rounded-md focus:border-2-[#000] w-w-80"
-                placeholder="0.00"
-                value={rainfall}
-                onChange={(e) => setRainfall(e.target.value)}
-                required
-              />
-            </div>
-            <div className="flex flex-col">
-              <label htmlFor="temperature" className="text-[#396E8D] font-bold mb-2">
-                Temperature
-              </label>
-              <input
-                type="number"
-                id="temperature"
-                className="border-2 bg-gray-200 p-2 rounded-md focus:border-2-[#000] w-w-80"
-                placeholder="0.00"
-                value={temperature}
-                onChange={(e) => setTemperature(e.target.value)}
-                required
-              />
-            </div>
-            <div className="flex flex-col">
               <label htmlFor="ph" className="text-[#396E8D] font-bold mb-2">
                 pH
               </label>
@@ -127,6 +145,20 @@ const PredictionPage = () => {
                 placeholder="0.00"
                 value={ph}
                 onChange={(e) => setPh(e.target.value)}
+                required
+              />
+            </div>
+            <div className="flex flex-col">
+              <label htmlFor="rainfall" className="text-[#396E8D] font-bold mb-2">
+                Rainfall
+              </label>
+              <input
+                type="number"
+                id="rainfall"
+                className="border-2 bg-gray-200 p-2 rounded-md focus:border-2-[#000] w-w-80"
+                placeholder="0.00"
+                value={rainfall}
+                onChange={(e) => setRainfall(e.target.value)}
                 required
               />
             </div>
