@@ -5,7 +5,7 @@ import Nav from './Nav';
 import Image from './image'
 import ImageDictionary from './ImageDictionary'
 
-import AboutPage from './About';
+import AboutPage from './About_us';
 import ContactForm from './contact';
 import NavigationBar from './Nav';
 import Footer from './Footer_page';

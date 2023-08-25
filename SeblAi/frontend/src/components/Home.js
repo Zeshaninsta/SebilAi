@@ -1,9 +1,10 @@
 import React from 'react';
 import Image from '../images/img1.jpg';
 import logo from '../images/logo.png';
-import PredictionPage from './prediction';
+import PredictionPage from './predict';
 import Maximize from './Maximize';
 import Footer from './Footer_page';
+import Pre from './Fi-pre';
 
 const HomePage = () => {
   return (
@@ -24,10 +25,16 @@ const HomePage = () => {
 >
   Discover the<br />perfect crop<br />for Your<br />Environment
 </h1>
+
+        {/* <h1
+  className="absolute bottom-0 right-0 p-4 text-white text-right text-4xl md:text-2xl lg:text-9xl xl:text-6xl 2xl:text-6xl font-bold"
+>
+  Discover the<br />perfect crop<br />for Your<br />Environment
+</h1> */}
       </div>
-      <PredictionPage />
+      {/* <PredictionPage /> */}
+      <Pre />
       <Maximize />
-      
     </div>
   );
 };

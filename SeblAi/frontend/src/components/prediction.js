@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import image_index from './index_image';
 import axios from 'axios';
+import plant from '../images/plant.png'
 
 
 const PredictionPage = () => {
@@ -74,8 +75,14 @@ const PredictionPage = () => {
 
   const [imageToShow, setImageToShow] = useState(null);
   return (
+    
     <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="bg-white w-full md:w-11/12 lg:w-11/12 xl:w-11/12 p-5 border-t-4 border-4 border-[#396E8D] relative p-5">
+      <div className="bg-white w-full absolute md:w-11/12 lg:w-11/12 xl:w-11/12 p-5 border-t-4 border-4 border-[#396E8D] relative p-5">
+      <img
+  src={plant}
+  alt="Background"
+  className="w-28 h-28 absolute left-0"
+/>
       <h1 className="text-[#396E8D] font-Poppins font-bold text-xl sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-4 border-b-4 border-[#396E8D]">
   Please Enter These Values:
 </h1>
@@ -104,6 +111,7 @@ const PredictionPage = () => {
     />
   )}
 </div>
+
           </div>
           <div className="flex flex-col space-y-8 ">
           <div className="flex flex-col">
