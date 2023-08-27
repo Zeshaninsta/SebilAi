@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import image_index from "./index_image";
 import axios from "axios";
 import DescriptionPage from "./DescriptionPage"; // Path to your DescriptionPage component
-import TypeWriterEffect from "./TypeWrite"; // Path to your TypeWriterEffect component
+import TypeWriterEffect from "./TypeWriter"; // Path to your TypeWriterEffect component
 import plant from "../images/plant.png";
+import ModalComponent from "./modal";
 
 const PredictionPage = () => {
   const [showAlert, setShowAlert] = useState(false);
@@ -15,6 +16,8 @@ const PredictionPage = () => {
   const [ShowredPoint, setShowredPoint] = useState("");
   const [temperature, setTemperature] = useState("");
   const [ph, setPh] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [modalResult, setModalResult] = useState("");
   const [descriptionToShow, setDescriptionToShow] = useState("");
   const [predictionInProgress, setPredictionInProgress] = useState(false);
 
@@ -66,7 +69,8 @@ const PredictionPage = () => {
         const predictedImage = image_index[predictedCrop];
 
         setPredictionInProgress(true);
-
+        setModalResult(predictedCrop);
+        setShowModal(true);
         setShowDiv(true);
         setAlertMessage(`${response.data}`);
         setShowAlert(true);
@@ -80,11 +84,15 @@ const PredictionPage = () => {
       }
     }
   };
+  const closeModal = () => {
+    setShowModal(false);
+    setModalResult("");
+  };
 
   const [imageToShow, setImageToShow] = useState(null);
 
   return (
-    <div className="flex items-center justify-center h-full bg-gray-100 mb-8 mt-8 relative">
+    <div className="flex items-center justify-center h-screen bg-gray-100 mb-8 mt-8 relative">
       <img src={plant} className="absolute truncate sm:block" />
       <div className="bg-white w-full md:w-3/5 lg:w-3/5 xl:w-3/5 p-5 border-t-4 border-4 border-[#396E8D] relative p-5">
         <h1 className="text-[#396E8D] font-Poppins font-bold text-xl sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-4 border-b-4 border-[#396E8D]">
@@ -92,16 +100,17 @@ const PredictionPage = () => {
         </h1>
         <br />
         <div className="flex items-center justify-center h-full">
-          <div
-            className={` absolute inset-0 flex  justify-center ${
+
+            {/* ******************************Navigation Class****************************** */}
+
+            <div className={`Nav absolute items-center inset-0 flex flex-col  justify-center ${
               showDiv ? "visible" : "hidden"
-            } w-full h-full m-auto border-2 border-[#396E8D] bg-slate-100 p-6 rounded-lg shadow-lg transition-transform transform flex-col`}
+            } w-4/5 h-full overflow-hidden m-auto border-2 border-[#396E8D] bg-slate-100 p-6 rounded-lg shadow-lg transition-transform transform flex-col`}
           >
-            <div>
-            <h1 className="text-left font-bold mb-4 lg:mt-8 sm:mt-0 border-b-4 border-[#396E8D] w-full text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-5xl py-2 px-4 sm:px-6 lg:px-8 text-[#396E8D]">
+            <div className="new flex items-center justify-center">
+                <h1 className="text-left absolute top-0 font-bold mb-4 border-b-4 border-[#396E8D] w-full text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-5xl py-2 px-4 sm:px-6 lg:px-8 text-[#396E8D]">
               Result
             </h1>
-            
             <button
               onClick={() => {
                 setShowDiv(false);
@@ -125,31 +134,43 @@ const PredictionPage = () => {
               </svg>
             </button>
             </div>
-            <div className="flex flex-col">
-              <h1 className="text-[#396E8D] font-bold mt-0 lg:text-4xl sm:3xl">
+            
+
+{/* ******************************Prediction Class****************************** */}
+            <div className="Prediction flex flex-col absolute">
+
+            <h1 className="text-[#396E8D] font-bold mt-0 ">
                 {" "}
                 The Predicted Crop is:{" "}
-                <span className="text-red-800 font-bold capitalize ">{alertMessage} </span>
+                <span className="text-red-800 font-bold ">{alertMessage} </span>
                 <br />
               </h1>
-              </div>
-              <div className="flex items-center justify-center lg:mt-14 sm:mt-5 sm:mb-3">
-            {imageToShow && (
-                <img
-                  src={imageToShow}
-                  alt="Predicted Crop"
-                  className="w-36"
-                />
-              )}
-            </div>
-              <div>
-              <p className=" ml-auto mr-auto py-5 w-full  lg:w-10/12 h-80 mt-0  ">
+                  </div>
+{/* ******************************Description Class****************************** */}
+              <div className="Description h-80">
+              <p className=" mb-5 ml-auto mr-auto py-5 w-10/12">
                 {descriptionToShow && (
                   <DescriptionPage predictedCrop={descriptionToShow} />
                 )}
               </p>
-              </div>
+            </div>
+{/* ******************************Image Class****************************** */}
+            <div className="image flex items-center justify-center mt-14">
+
+            {imageToShow && (
+                <img
+                  src={imageToShow}
+                  alt="Predicted Crop"
+                  className="w-28 h-28 absolute bottom-10 mt-20"
+                />
+              )}
+
+            </div>
+
+
           </div>
+          
+          
           <div className="flex flex-col space-y-8 ">
             <div className="flex flex-col">
               <label

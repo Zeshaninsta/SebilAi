@@ -4,7 +4,7 @@ import logo from '../images/logo.png';
 import PredictionPage from './predict';
 import Maximize from './Maximize';
 import Footer from './Footer_page';
-import Pre from './Fi-pre';
+import Pre from './predict';
 
 const HomePage = () => {
   return (
