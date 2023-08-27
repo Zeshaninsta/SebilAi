@@ -6,6 +6,8 @@ import Maximize from './Maximize';
 import Footer from './Footer_page';
 import Pre from './predict';
 
+
+
 const HomePage = () => {
   return (
     <div>
@@ -24,13 +26,8 @@ const HomePage = () => {
   className="absolute bottom-0 right-0 p-4 text-white text-right text-4xl md:text-2xl lg:text-9xl xl:text-6xl 2xl:text-6xl font-bold"
 >
   Discover the<br />perfect crop<br />for Your<br />Environment
-</h1>
-
-        {/* <h1
-  className="absolute bottom-0 right-0 p-4 text-white text-right text-4xl md:text-2xl lg:text-9xl xl:text-6xl 2xl:text-6xl font-bold"
->
-  Discover the<br />perfect crop<br />for Your<br />Environment
-</h1> */}
+</h1> 
+  
       </div>
       {/* <PredictionPage /> */}
       <Pre />

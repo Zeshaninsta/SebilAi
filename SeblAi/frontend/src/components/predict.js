@@ -86,7 +86,7 @@ const PredictionPage = () => {
   return (
     <div className="flex items-center justify-center h-full bg-gray-100 mb-8 mt-8 relative">
       <img src={plant} className="absolute truncate sm:block" />
-      <div className="bg-white w-full md:w-3/5 lg:w-3/5 xl:w-3/5 p-5 border-t-4 border-4 border-[#396E8D] relative p-5">
+      <div className="bg-white w-full md:w-3/5 lg:w-3/5 xl:w-3/5 p-5 border-t-4 border-4 border-[#396E8D] relative">
         <h1 className="text-[#396E8D] font-Poppins font-bold text-xl sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-4 border-b-4 border-[#396E8D]">
           Please Enter These Values:
         </h1>
@@ -95,10 +95,10 @@ const PredictionPage = () => {
           <div
             className={` absolute inset-0 flex  justify-center ${
               showDiv ? "visible" : "hidden"
-            } w-full h-full m-auto border-2 border-[#396E8D] bg-slate-100 p-6 rounded-lg shadow-lg transition-transform transform flex-col`}
+            } w-full h-full m-auto border-2 border-[#396E8D] bg-slate-100 p-6 shadow-lg transition-transform transform flex-col`}
           >
             <div>
-            <h1 className="text-left font-bold mb-4 lg:mt-8 sm:mt-0 border-b-4 border-[#396E8D] w-full text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-5xl py-2 px-4 sm:px-6 lg:px-8 text-[#396E8D]">
+            <h1 className="text-left font-bold mb-4 flex justify-between items-center lg:mt-8 sm:mt-0 border-b-2 border-[#396E8D] w-full text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-5xl py-2 px-4 sm:px-6 lg:px-8 text-[#396E8D]">
               Result
             </h1>
             
@@ -107,7 +107,7 @@ const PredictionPage = () => {
                 setShowDiv(false);
                 setDescriptionToShow(""); // Passing an empty string to clear the description
               }}
-              className="absolute top-0 right-0 p-2 text-gray-600 hover:text-red-600 focus:outline-none"
+              className="absolute top-0 right-0  p-2 text-gray-600 hover:text-red-600 font-bold  focus:outline-none"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
