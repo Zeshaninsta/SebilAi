@@ -52,12 +52,12 @@ const TeamMembers = () => {
       description: "Frontend Developer",
       contact: "AASTU"
     },
-    {
-      name:"SebilAi",
-      image: logo,
-      description: "Project",
-      contact:"sebilAi@developers.com"
-    }
+    // {
+    //   name:"SebilAi",
+    //   image: logo,
+    //   description: "Project",
+    //   contact:"sebilAi@developers.com"
+    // }
   ];
 
   return (
@@ -69,13 +69,13 @@ const TeamMembers = () => {
         {members.map((member, index) => (
          <div
          key={index}
-         className="bg-white p-4 rounded-lg w-full h-full shadow-lg transform transition-transform hover:scale-105"
+         className="bg-white p-4 rounded-lg  m-auto shadow-lg transform transition-transform hover:scale-105"
        >
          <div className="h-[calc(100% - 2rem)] overflow-hidden rounded-lg"> {/* Adjust height minus padding */}
            <img
              src={member.image}
              alt={member.name}
-             className="w-full h-full object-cover"
+             className=" object-cover"
            />
          </div>
             <div className="mt-2 text-[#396E8D]">

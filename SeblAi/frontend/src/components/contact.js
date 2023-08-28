@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import sebil from "../images/logo.png";
-import ico from "../images/logo.png";
-import phoneIcon from "../images/logo.png";
-import emailIcon from "../images/logo.png";
-import { FaPhone, FaEnvelope, FaMapMarker, FaTwitter, FaFacebook, FaLinkedin  } from 'react-icons/fa';
+import sebil from "../images/logo2.png";
+import { FaPhone, FaEnvelope, FaMapMarker, FaTwitter, FaFacebook, FaLinkedin } from 'react-icons/fa';
+import emailjs from 'emailjs-com';
 
 const PhoneButton = () => {
   const handlePhoneClick = () => {
@@ -20,13 +18,13 @@ const PhoneButton = () => {
 
 const EmailButton = () => {
   const handleEmailClick = () => {
-    window.location.href = 'mailto:contact@example.com';
+    window.location.href = 'mailto:sebilaidevelopers@gmail.com';
   };
 
   return (
     <button className="contact-button flex items-center gap-5 border-2 border-slate-900 p-2 rounded" onClick={handleEmailClick}>
       <FaEnvelope className="contact-icon" />
-      <span>sebilAi@developers.com</span>
+      <span>sebilaidevelopers@gmail.com</span>
     </button>
   );
 };
@@ -44,8 +42,6 @@ const LocationButton = () => {
   );
 };
 
-// ContactInfo component to display organization's contact information
-
 function ContactForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -54,11 +50,26 @@ function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    alert(`Form submitted:\nName: ${name}\nEmail: ${email}\nMessage: ${message}`);
+    const serviceID = 'service_rgfey4k';
+    const templateID = 'template_p9153tp';
+    const userID = 'HkPtSS4x2nr_co-1J';
 
-    setName('');
-    setEmail('');
-    setMessage('');
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      message: message,
+    };
+
+    emailjs.send(serviceID, templateID, templateParams, userID)
+      .then((response) => {
+        alert('Email sent successfully!', response);
+        setName('');
+        setEmail('');
+        setMessage('');
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error);
+      });
   };
 
   return (

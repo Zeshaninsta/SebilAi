@@ -84,10 +84,10 @@ const PredictionPage = () => {
   const [imageToShow, setImageToShow] = useState(null);
 
   return (
-    <div className="flex items-center justify-center h-full bg-gray-100 mb-8 mt-8 relative">
+    <div className="flex items-center justify-center h-full bg-gray-100 mb-8 mt-8 relative " id="table">
       <img src={plant} className=" absolute truncate sm:block" />
-      <div className=" bg-white w-full md:w-3/5 lg:w-3/5 xl:w-3/5 p-5 border-t-4 border-4 border-[#396E8D] relative">
-        <h1 className="text-[#396E8D] font-Poppins font-bold text-xl sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-4 border-b-4 border-[#396E8D]">
+      <div className=" bg-white w-full md:w-3/5 lg:w-3/5 xl:w-3/5 py-10 border-t-4 border-4 border-[#396E8D] relative">
+        <h1 className="text-[#396E8D] flex items-center justify-center font-Poppins font-bold text-xl sm:text-lg md:text-xl lg:text-2xl xl:text-3xl border-b-4 border-[#396E8D]">
           Please Enter These Values:
         </h1>
         <br />
@@ -126,14 +126,14 @@ const PredictionPage = () => {
             </button>
             </div>
             <div className="flex flex-col">
-              <h1 className="text-[#396E8D] font-bold mt-0 lg:text-4xl sm:3xl">
+              <h1 className="text-[#396E8D] font-bold mt-0 lg:text-4xl sm:3xl mt-40px">
                 {" "}
                 The Predicted Crop is:{" "}
-                <span className="text-red-800 font-bold capitalize ">{alertMessage} </span>
+                <span className="text-black font-bold capitalize border-b-2 border-black">{alertMessage} </span>
                 <br />
               </h1>
               </div>
-              <div className="flex items-center justify-center lg:mt-14 sm:mt-5 sm:mb-3 w-[100px] m-auto">
+              <div className="flex items-center justify-center lg:mt-14 sm:mt-5 sm:mb-3 w-[200px] m-auto">
             {imageToShow && (
                 <img
                   src={imageToShow}
@@ -143,7 +143,7 @@ const PredictionPage = () => {
               )}
             </div>
               <div>
-              <p className=" ml-auto mr-auto py-5 w-full  lg:w-10/12 h-80 mt-0  text-start">
+              <p className=" ml-auto mr-auto py-5 w-full  lg:w-10/12 h-80 mt-0  text-start font-bold">
                 {descriptionToShow && (
                   <DescriptionPage predictedCrop={descriptionToShow} />
                 )}
@@ -151,32 +151,32 @@ const PredictionPage = () => {
               </div>
           </div>
           <div className="flex flex-col space-y-8 ">
-            <div className="flex flex-col">
-              <label
-                htmlFor="temperature"
-                className="text-[#396E8D] font-bold mb-2"
-              >
-                Temperature
-              </label>
-              <input
-                type="number"
-                id="temperature"
-                className={`border-2 ${
-                  temperature < -50 || temperature > 50
-                    ? "border-red-500"
-                    : "border-gray-200"
-                } p-2 rounded-md focus:border-2-[#000] w-80`}
-                placeholder="-50 to 50"
-                value={temperature}
-                onChange={(e) => setTemperature(e.target.value)}
-                required
-              />
-              {temperature < -50 || temperature > 50 ? (
-                <p className="text-red-500 text-sm mt-1">
-                  Temperature must be between -50 and 50
-                </p>
-              ) : null}
-            </div>
+          <div className="flex flex-col">
+  <label
+    htmlFor="temperature"
+    className="text-[#396E8D] font-bold mb-2"
+  >
+    Temperature
+  </label>
+  <input
+    type="number"
+    id="temperature"
+    className={`border-2 ${
+      temperature < -50 || temperature > 50
+        ? "border-red-500"
+        : "border-gray-200"
+    } p-2 rounded-md focus:border-2-[#000] w-80`}
+    placeholder={`${-50}\u00b0 to ${50}\u00b0`}
+    value={temperature}
+    onChange={(e) => setTemperature(e.target.value)}
+    required
+  />
+  {temperature < -50 || temperature > 50 ? (
+    <p className="text-red-500 text-sm mt-1">
+      Temperature must be between -50 and 50
+    </p>
+  ) : null}
+</div>
             <div className="flex flex-col">
               <label
                 htmlFor="humidity"
@@ -192,7 +192,7 @@ const PredictionPage = () => {
                     ? "border-red-500"
                     : "border-gray-200"
                 } p-2 rounded-md focus:border-2-[#000] w-80`}
-                placeholder="0 to 100"
+                placeholder="0 to 100%"
                 value={humidity}
                 onChange={(e) => setHumidity(e.target.value)}
                 required
@@ -237,7 +237,7 @@ const PredictionPage = () => {
                 className={`border-2 ${
                   rainfall < 0 ? "border-red-500" : "border-gray-200"
                 } p-2 rounded-md focus:border-2-[#000] w-80`}
-                placeholder="greater than or equal to 0"
+                placeholder="greater than or equal to 0mm"
                 value={rainfall}
                 onChange={(e) => setRainfall(e.target.value)}
                 required

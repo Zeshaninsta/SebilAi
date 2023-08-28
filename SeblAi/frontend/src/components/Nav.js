@@ -42,10 +42,18 @@ const NavigationBar = () => {
             <Link
               to="/contact"
               className={`relative w-fit text-[#396E8D] block font-semibold after:block after:content-[''] after:absolute after:h-[2px] after:bg-blue-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left ${
-                location.pathname === '/contact' ? 'text-blue-[#396E8D] border-b-2 border-blue-[#396E8D]' : 'opacity-50'
+                location.pathname === '/contact' ? 'text-blue-[#396E8D] border-b-2 border-blue-[]' : 'opacity-50'
               }`}
             >
               Contact
+            </Link>
+            <Link
+              to="/predict"
+              className={`relative w-fit text-[#396E8D] block font-semibold after:block after:content-[''] after:absolute after:h-[2px] after:bg-blue-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left ${
+                location.pathname === '/predict' ? 'text-blue-[#396E8D] border-b-2 border-blue-[]' : 'opacity-50'
+              }`}
+            >
+              Predict
             </Link>
           </div>
           <button className="text-[#396E8D] lg:hidden" onClick={toggleMenu}>
@@ -100,6 +108,15 @@ const NavigationBar = () => {
               onClick={closeMenu}
             >
               Contact
+            </Link>
+            <Link
+              to="/predict"
+              className={`${
+                location.pathname === '/predict' ? 'text-blue-500' : ''
+              }`}
+              onClick={closeMenu}
+            >
+              Predict
             </Link>
           </div>
         </div>
