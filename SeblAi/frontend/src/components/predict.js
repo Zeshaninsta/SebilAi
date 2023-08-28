@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import image_index from "./index_image";
 import axios from "axios";
 import DescriptionPage from "./DescriptionPage"; // Path to your DescriptionPage component
-import TypeWriterEffect from "./TypeWrite"; // Path to your TypeWriterEffect component
+import TypeWriterEffect from "./typewriter"; // Path to your TypeWriterEffect component
 import plant from "../images/plant.png";
 
 const PredictionPage = () => {
@@ -95,7 +95,7 @@ const PredictionPage = () => {
           <div
             className={` absolute inset-0 flex  justify-center ${
               showDiv ? "visible" : "hidden"
-            } w-full h-full m-auto border-2 border-[#396E8D] bg-slate-100 p-6 shadow-lg transition-transform transform flex-col`}
+            } w-full h-full m-auto border-2 border-[#396E8D] bg-white p-6 shadow-lg transition-transform transform flex-col`}
           >
             <div>
             <h1 className="text-left font-bold mb-4 flex justify-between items-center lg:mt-8 sm:mt-0 border-b-2 border-[#396E8D] w-full text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-5xl py-2 px-4 sm:px-6 lg:px-8 text-[#396E8D]">
