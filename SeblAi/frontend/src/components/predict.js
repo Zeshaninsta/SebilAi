@@ -85,8 +85,8 @@ const PredictionPage = () => {
 
   return (
     <div className="flex items-center justify-center h-full bg-gray-100 mb-8 mt-8 relative">
-      <img src={plant} className="absolute truncate sm:block" />
-      <div className="bg-white w-full md:w-3/5 lg:w-3/5 xl:w-3/5 p-5 border-t-4 border-4 border-[#396E8D] relative">
+      <img src={plant} className=" absolute truncate sm:block" />
+      <div className=" bg-white w-full md:w-3/5 lg:w-3/5 xl:w-3/5 p-5 border-t-4 border-4 border-[#396E8D] relative">
         <h1 className="text-[#396E8D] font-Poppins font-bold text-xl sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-4 border-b-4 border-[#396E8D]">
           Please Enter These Values:
         </h1>
@@ -143,7 +143,7 @@ const PredictionPage = () => {
               )}
             </div>
               <div>
-              <p className=" ml-auto mr-auto py-5 w-full  lg:w-10/12 h-80 mt-0  ">
+              <p className=" ml-auto mr-auto py-5 w-full  lg:w-10/12 h-80 mt-0  text-start">
                 {descriptionToShow && (
                   <DescriptionPage predictedCrop={descriptionToShow} />
                 )}

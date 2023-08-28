@@ -26,7 +26,7 @@ const NavigationBar = () => {
             <Link
               to="/"
               className={`relative w-fit text-[#396E8D] block font-semibold after:block after:content-[''] after:absolute after:h-[2px] after:bg-blue-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left ${
-                location.pathname === '/' ? 'text-blue-500 border-b-2 border-blue-500 ' :  'opacity-50'
+                location.pathname === '/' ? 'text-[#396E8D] border-b-2 border-[#396E8D] ' :  'opacity-50'
               }`}
             >
               Home
@@ -34,7 +34,7 @@ const NavigationBar = () => {
             <Link
               to="/about"
               className={`relative w-fit text-[#396E8D] block font-semibold after:block after:content-[''] after:absolute after:h-[2px] after:bg-blue-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left ${
-                location.pathname === '/about' ? 'text-blue-500 border-b-2 border-blue-500' : 'opacity-50'
+                location.pathname === '/about' ? 'text-[#396E8D] border-b-2 border-[#396E8D]' : 'opacity-50'
               }`}
             >
               About
@@ -42,7 +42,7 @@ const NavigationBar = () => {
             <Link
               to="/contact"
               className={`relative w-fit text-[#396E8D] block font-semibold after:block after:content-[''] after:absolute after:h-[2px] after:bg-blue-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left ${
-                location.pathname === '/contact' ? 'text-blue-500 border-b-2 border-blue-500' : 'opacity-50'
+                location.pathname === '/contact' ? 'text-blue-[#396E8D] border-b-2 border-blue-[#396E8D]' : 'opacity-50'
               }`}
             >
               Contact
