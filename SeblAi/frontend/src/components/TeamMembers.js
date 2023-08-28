@@ -29,7 +29,7 @@ const TeamMembers = () => {
       contact: "AAU"
     },
     {
-      name: "Bereket Getachew",
+      name: "Bereket Alebachew",
       image: beki,
       description: "Backend Developer",
       contact: "AAU"
