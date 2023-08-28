@@ -133,7 +133,7 @@ const PredictionPage = () => {
                 <br />
               </h1>
               </div>
-              <div className="flex items-center justify-center lg:mt-14 sm:mt-5 sm:mb-3">
+              <div className="flex items-center justify-center lg:mt-14 sm:mt-5 sm:mb-3 w-[100px] m-auto">
             {imageToShow && (
                 <img
                   src={imageToShow}

@@ -1,11 +1,11 @@
 import React from "react";
-import betty from "./Developers/betty.jpg";
+import betty from "./Developers/betty.jpg.png";
 import fita from "./Developers/fita.jpg";
 import tuji from "./Developers/tuji.jpg";
 import brook from "./Developers/brook.jpg";
-import beki from "./Developers/beki.jpg";
+import beki from "./Developers/beki.jpg.png";
 import emran from "./Developers/emran.png";
-import mahalet from './Developers/mahalet.jpg'
+import mahalet from './Developers/mahalet.png'
 import logo from '../images/logo_dev.png'
 
 const TeamMembers = () => {
@@ -67,18 +67,17 @@ const TeamMembers = () => {
       </h1>
       <div className="bg-gray-100 min-h-screen p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 items-center">
         {members.map((member, index) => (
-          <div
-            key={index}
-            className="bg-white p-4 rounded-lg shadow-lg transform transition-transform hover:scale-105"
-            style={{ width: "200px", height: "300px" }} // Set width and height here
-          >
-            <div className="h-[200px] overflow-hidden rounded-lg">
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-100 h-100 object-cover"
-              />
-            </div>
+         <div
+         key={index}
+         className="bg-white p-4 rounded-lg w-full h-full shadow-lg transform transition-transform hover:scale-105"
+       >
+         <div className="h-[calc(100% - 2rem)] overflow-hidden rounded-lg"> {/* Adjust height minus padding */}
+           <img
+             src={member.image}
+             alt={member.name}
+             className="w-full h-full object-cover"
+           />
+         </div>
             <div className="mt-2 text-[#396E8D]">
               <p className="font-semibold text-lg">{member.name}</p>
               <p className="text-sm">{member.description}</p>

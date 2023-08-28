@@ -12,9 +12,9 @@ function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="text-[#407391] text-center">
-          &copy; {new Date().getFullYear()} SebilAi. All rights reserved.
-        </div>
+        <div className="text-[#407391] text-center text-xs sm:text-base md:text-lg lg:text-xl">
+  &copy; {new Date().getFullYear()} SebilAi. All rights reserved.
+</div>
 
         {/* Social Media Icons */}
         <div className="flex items-center space-x-4">
