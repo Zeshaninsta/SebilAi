@@ -4,7 +4,7 @@ import { FaTwitter, FaFacebook, FaLinkedin } from 'react-icons/fa';
 
 function Footer() {
   return (
-    <footer className="bg-[#f9f9f9] px-5 py-4">
+    <footer className="bg-[#f9f9f9] px-5 py-4 sticky">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center space-x-2">

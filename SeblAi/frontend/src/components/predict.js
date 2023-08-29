@@ -95,7 +95,7 @@ const PredictionPage = () => {
           <div
             className={` absolute inset-0 flex  justify-center ${
               showDiv ? "visible" : "hidden"
-            } w-full h-full m-auto border-2 border-[#396E8D] bg-white p-6 shadow-lg transition-transform transform flex-col`}
+            } w-full h-full m-auto bg-white p-6 shadow-lg transition-transform transform flex-col`}
           >
             <div>
             <h1 className="text-left font-bold mb-4 flex justify-between items-center lg:mt-8 sm:mt-0 border-b-2 border-[#396E8D] w-full text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-5xl py-2 px-4 sm:px-6 lg:px-8 text-[#396E8D]">

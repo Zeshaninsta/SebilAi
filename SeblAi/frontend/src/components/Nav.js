@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import logo from '../images/logo.png';
-import { hover } from '@testing-library/user-event/dist/hover';
+import React, { useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link as ScrollLink} from 'react-scroll';
+
+import logo from "../images/logo.png";
+import { hover } from "@testing-library/user-event/dist/hover";
 
 const NavigationBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
-
+  const [isMobile, setIsMobile] = useState(false);
+  const isSamePage = location.pathname === '/';
+  const linkId = isSamePage ? 'predict' : 'pre';
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -23,39 +27,54 @@ const NavigationBar = () => {
         </div>
         <div className="flex items-center space-x-4">
           <div className="hidden lg:flex space-x-4">
-            <Link
-              to="/"
+            <NavLink
+              to="/Home"
               className={`relative w-fit text-[#396E8D] block font-semibold after:block after:content-[''] after:absolute after:h-[2px] after:bg-blue-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left ${
-                location.pathname === '/' ? 'text-[#396E8D] border-b-2 border-[#396E8D] ' :  'opacity-50'
+                location.pathname === "/Home"
+                  ? "text-[#396E8D] border-b-2 border-[#396E8D] "
+                  : "opacity-50"
               }`}
             >
               Home
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/about"
               className={`relative w-fit text-[#396E8D] block font-semibold after:block after:content-[''] after:absolute after:h-[2px] after:bg-blue-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left ${
-                location.pathname === '/about' ? 'text-[#396E8D] border-b-2 border-[#396E8D]' : 'opacity-50'
+                location.pathname === "/about"
+                  ? "text-[#396E8D] border-b-2 border-[#396E8D]"
+                  : "opacity-50"
               }`}
             >
               About
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/contact"
               className={`relative w-fit text-[#396E8D] block font-semibold after:block after:content-[''] after:absolute after:h-[2px] after:bg-blue-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left ${
-                location.pathname === '/contact' ? 'text-blue-[#396E8D] border-b-2 border-blue-[]' : 'opacity-50'
+                location.pathname === "/contact"
+                  ? "text-blue-[#396E8D] border-b-2 border-[#396E8D]"
+                  : "opacity-50"
               }`}
             >
               Contact
-            </Link>
-            <Link
-              to="/predict"
+            </NavLink>
+            <NavLink  to="/faq"
               className={`relative w-fit text-[#396E8D] block font-semibold after:block after:content-[''] after:absolute after:h-[2px] after:bg-blue-500 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left ${
-                location.pathname === '/predict' ? 'text-blue-[#396E8D] border-b-2 border-blue-[]' : 'opacity-50'
-              }`}
+                location.pathname === "/faq"
+                  ? "text-blue-[#396E8D] border-b-2  border-[#396E8D]"
+                  : "opacity-50"
+              }`} >
+              FAQ
+            </NavLink>
+          </div>
+          <NavLink
+              smooth={true}
+              duration={500}
+              offset={-50}
+              to='Home/pre'
+              className={"bg-[#396E8D] hover:bg-[#2d5973] px-[10px] py-[5px] text-white rounded-lg font-bold"}
             >
               Predict
-            </Link>
-          </div>
+            </NavLink>
           <button className="text-[#396E8D] lg:hidden" onClick={toggleMenu}>
             <svg
               className="w-6 h-6"
@@ -76,54 +95,57 @@ const NavigationBar = () => {
         </div>
       </div>
       {menuOpen && (
-        <div className="lg:hidden mt-4">
+        <div
+          className={`lg:hidden mt-4 ${
+            menuOpen ? "fixed" : "hidden"
+          } transition-transform duration-300 ease-in-out transform ${
+            menuOpen && isMobile ? "translate-x-0" : "translate-x-full"
+          } z-9999`}
+        >
           <div className="block text-[#396E8D] font-semibold mb-2">
-            <Link
+            <NavLink
               to="/"
-              className={`${
-                location.pathname === '/' ? 'text-blue-500' : ''
-              }`}
+              className={`${location.pathname === "/" ? "text-blue-500" : ""}`}
               onClick={closeMenu}
             >
               Home
-            </Link>
+            </NavLink>
           </div>
           <div className="block text-[#396E8D] font-semibold mb-2">
-            <Link
+            <NavLink
               to="/about"
               className={`${
-                location.pathname === '/about' ? 'text-blue-500' : ''
+                location.pathname === "/about" ? "text-blue-500" : ""
               }`}
               onClick={closeMenu}
             >
               About
-            </Link>
+            </NavLink>
           </div>
           <div className="block text-[#396E8D] font-semibold mb-2">
-            <Link
+            <NavLink
               to="/contact"
               className={`${
-                location.pathname === '/contact' ? 'text-blue-500' : ''
+                location.pathname === "/contact" ? "text-blue-500" : ""
               }`}
               onClick={closeMenu}
             >
               Contact
-            </Link>
-            <Link
-              to="/predict"
+            </NavLink>
+            <ScrollLink
+              to="/?scrollTo=pred"
               className={`${
-                location.pathname === '/predict' ? 'text-blue-500' : ''
+                location.pathname === "/predict" ? "text-blue-500" : ""
               }`}
               onClick={closeMenu}
             >
               Predict
-            </Link>
+            </ScrollLink>
           </div>
         </div>
       )}
     </nav>
   );
 };
-
 
 export default NavigationBar;
