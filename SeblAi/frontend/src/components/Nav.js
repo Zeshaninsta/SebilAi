@@ -11,6 +11,12 @@ const NavigationBar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const isSamePage = location.pathname === '/';
   const linkId = isSamePage ? 'predict' : 'pre';
+
+  const handleLinkClick = () => {
+    setMenuOpen(false); // Close the menu when a link is clicked
+  };
+
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -21,7 +27,7 @@ const NavigationBar = () => {
 
   return (
     <nav className="border-b border-b-[#e6ebf4] p-5 nav">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between relative">
         <div className="flex items-center">
           <img src={logo} alt="Logo" className="w-20 h-15 mr-4" />
         </div>
@@ -67,7 +73,7 @@ const NavigationBar = () => {
             </NavLink>
           </div>
           <NavLink
-              smooth={true}
+              smooth
               duration={500}
               offset={-50}
               to='Home/pre'
@@ -75,72 +81,74 @@ const NavigationBar = () => {
             >
               Predict
             </NavLink>
-          <button className="text-[#396E8D] lg:hidden" onClick={toggleMenu}>
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              {/* Add SVG content here */}
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
+            <button className="text-[#396E8D] lg:hidden" onClick={toggleMenu}>
+      {menuOpen ? (
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Add SVG content for the cross (X) shape */}
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      ) : (
+        <svg
+          className="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Add SVG content for the hamburger icon */}
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      )}
+    </button>
         </div>
       </div>
       {menuOpen && (
-        <div
-          className={`lg:hidden mt-4 ${
-            menuOpen ? "fixed" : "hidden"
-          } transition-transform duration-300 ease-in-out transform ${
-            menuOpen && isMobile ? "translate-x-0" : "translate-x-full"
-          } z-9999`}
-        >
+        <div className="lg:hidden m-auto w-full flex flex-col items-center border-b-2 border-[#396e8d] shadow-md justify-center absolute top-20 right-0 z-10 bg-white">
           <div className="block text-[#396E8D] font-semibold mb-2">
             <NavLink
-              to="/"
-              className={`${location.pathname === "/" ? "text-blue-500" : ""}`}
-              onClick={closeMenu}
+              to="/Home"
+              className={`relative w-fit text-[#396E8D] block font-semibold ...`}
+              onClick={handleLinkClick} // Close the menu when the link is clicked
             >
               Home
             </NavLink>
-          </div>
-          <div className="block text-[#396E8D] font-semibold mb-2">
             <NavLink
               to="/about"
-              className={`${
-                location.pathname === "/about" ? "text-blue-500" : ""
-              }`}
-              onClick={closeMenu}
+              className={`relative w-fit text-[#396E8D] block font-semibold ...`}
+              onClick={handleLinkClick} // Close the menu when the link is clicked
             >
               About
             </NavLink>
-          </div>
-          <div className="block text-[#396E8D] font-semibold mb-2">
             <NavLink
               to="/contact"
-              className={`${
-                location.pathname === "/contact" ? "text-blue-500" : ""
-              }`}
-              onClick={closeMenu}
+              className={`relative w-fit text-[#396E8D] block font-semibold ...`}
+              onClick={handleLinkClick} // Close the menu when the link is clicked
             >
               Contact
             </NavLink>
-            <ScrollLink
-              to="/?scrollTo=pred"
-              className={`${
-                location.pathname === "/predict" ? "text-blue-500" : ""
-              }`}
-              onClick={closeMenu}
+            <NavLink
+              to="/faq"
+              className={`relative w-fit text-[#396E8D] block font-semibold ...`}
+              onClick={handleLinkClick} // Close the menu when the link is clicked
             >
-              Predict
-            </ScrollLink>
+              FAQ
+            </NavLink>
           </div>
         </div>
       )}

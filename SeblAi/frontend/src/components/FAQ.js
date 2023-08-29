@@ -192,7 +192,23 @@ const FAQ = () => {
           ) : (
             /* Display the "Item not found" message */
             <li className="mb-4 font-semibold text-2xl text-[#396E8D] flex items-center justify-center opacity-30">
-              <p>Item not found</p>
+              <div className='flex flex-col justify-center items-center font-normal'>
+              <p>
+  Your search -{searchQuery} - did not match any documents.
+</p>
+<div className='text-start mt-10'>
+<p className='text-center'> 
+  
+  Suggestions:
+</p>
+<ol className='list-decimal'>
+  <li>Make sure that all words are spelled correctly.</li>
+  <li>Try different keywords.</li>
+  <li>Try more general keywords.</li>
+</ol>
+</div>
+
+              </div>
             </li>
           )}
         </ul>
