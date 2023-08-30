@@ -166,7 +166,7 @@ const PredictionPage = () => {
         ? "border-red-500"
         : "border-gray-200"
     } p-2 rounded-md focus:border-2-[#000] w-80`}
-    placeholder={`${-50}\u00b0 to ${50}\u00b0`}
+    placeholder={`${-50}\u00b0C to ${50}\u00b0C`}
     value={temperature}
     onChange={(e) => setTemperature(e.target.value)}
     required
