@@ -16,7 +16,7 @@ import maize from './Pictures/maize.png';
 import mango from './Pictures/mango.png';
 import millet from './Pictures/Millet.png';
 import mothbeans from './Pictures/moth_beans.png';
-import mungBeans from './Pictures/mung_beans.png';
+import mungbean from './Pictures/mung_beans.png';
 import muskmelon from './Pictures/muskmelon.png';
 import orange from './Pictures/orange.png';
 import papaya from './Pictures/papaya.png';
@@ -49,7 +49,7 @@ const image_index = {
   mango,
   millet,
   mothbeans,
-  mungBeans,
+  mungbean,
   muskmelon,
   orange,
   papaya,

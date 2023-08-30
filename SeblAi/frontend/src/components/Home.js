@@ -34,7 +34,7 @@ const HomePage = () => {
         </div>
 
         <h1
-  className="absolute bottom-5 right-5 p-4 text-white text-right text-4xl md:text-2xl lg:text-9xl xl:text-6xl 2xl:text-4xl font-bold
+  className="absolute bottom-5 right-5 p-4 text-white text-right text-4xl md:text-2xl lg:text-9xl xl:text-6xl 2xl:text-7xl font-bold
              sm:absolute sm:bottom-0 sm:right-0 sm:text-3xl
              md:bottom-0 md:right-0"
 >
