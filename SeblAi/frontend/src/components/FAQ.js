@@ -16,7 +16,7 @@ const FAQ = () => {
       ),
     },
     {
-      question: "What Does This System Do?",
+      question: "What Does This System Work?",
       answer: (
         <>
           Sebil AI is a revolutionary tool that leverages artificial
