@@ -48,11 +48,12 @@ npm start
 This will start a development server and open the app in your browser.
 
 ## Remember 
-React Server Must Be Start On Port 3000, if The Port Is Not Started At Port 3000 The Use This Command To Stop The Server That Uses The Port 3000 and Then Start Again 
+React Server Must Start On Port 3000, if The Port Is Not Started At Port 3000 Then Use This Command To Stop The Server That Uses The Port 3000 and Then Start Again 
 ### To Stop The Port 
 
 ```bash
 npm kill-Port 3000
+npm start
 ```
 
 
