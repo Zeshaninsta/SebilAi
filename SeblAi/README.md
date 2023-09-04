@@ -102,6 +102,7 @@ To Run Or Start The Django Server You Have To Navigate To The Backend Folder Whe
 
 
 ```bash
+cd backend
 python manage.py runserver 
 ```
 
