@@ -12,9 +12,7 @@
 ## Getting Started
 To get started with this project, follow these steps
 
-### step 1 
-
-Clone The Repository 
+ 
 
 # React and Django Installation Guide
 
@@ -22,11 +20,14 @@ This guide will show you how to install React and Django on your system, as well
 
 ## React Installation
 
-To install React, you will need to have **Node.js** and **npm** installed on your system. You can download them from [here].
+To install React, you will need to have **Node.js** and **npm** installed on your system.
+### step 1 
+
+Clone The Repository
 
 ### Step 2
 
-Once you have Node.js and npm installed, you can Initialize The Project using the following command:
+Once you have cloned The Repository Then you can Initialize The Project using the following command:
 
 ```bash
 cd frontend
@@ -61,7 +62,7 @@ npm kill-Port 3000
 
 ### Step 1 
 
-To install Django, you will need to have **Python** installed on your system. You can download it from [here].
+To install Django, you will need to have **Python** installed on your system.
 
 Once you have Python installed, you can install Django using the following command:
 
