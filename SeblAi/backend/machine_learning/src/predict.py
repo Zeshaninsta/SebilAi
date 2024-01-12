@@ -1,9 +1,12 @@
 import pandas as pd
-from .model_training import preprocess_data, load_data
+from .model_training import preprocess_data, load_data  # Adjust import statement here
 import joblib
 import sys
 import os
 import django
+
+# Rest of your code remains unchanged...
+
 
 project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 os.chdir(project_root)
